@@ -1,0 +1,32 @@
+```
+(pfx)help
+    (or (pfx)halp, (pfx)?, (pfx)101)
+    Sends you this help document
+
+(pfx)ping
+    (or (pfx)test)
+    Pong!
+
+(pfx)greet <User>
+    (or (pfx)hi)
+    Sends <User> a private message to greet them.
+    You must @mention them for this to work.
+
+(pfx)addsong <URL>
+    (or (pfx)as)
+    Adds a Video to the Server Playlist.
+    (YouTube, Vimeo, Soundcloud and many more are supported)
+
+(pfx)infosong <URL>
+    (or (pfx)is)
+    Looks up some info about your video.
+    (YouTube, Vimeo, Soundcloud and many more are supported)
+
+(pfx)addsong <Song ID>
+    (or (pfx)as)
+    Adds a given Song to the queue
+
+(pfx)listsongs
+    (or (pfx)ls)
+    Lists Songs for this server
+```
