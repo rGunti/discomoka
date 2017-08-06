@@ -1,0 +1,3 @@
+**Discomoka** is a Music Bot for Discord designed to bring you joy and happiness into your Discord voice channel. She is also the spiritual successor to "Momoka", also a Music Bot which was serving my TeamSpeak server until it was shut down earlier in 2017.
+
+Discomoka's code is open source and licensed under the MIT License. See more here: [github.com/rGunti/discomoka](http://rgunti.li/discomoka)

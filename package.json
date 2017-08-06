@@ -1,0 +1,35 @@
+{
+  "name": "discomoka-ts",
+  "version": "0.2.0",
+  "description": "",
+  "main": "build/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./build/main.js",
+    "compile": "tsc",
+    "compile-watch": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "Raphael \"rGunti\" Guntersweiler",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^8.0.19",
+    "nodemon": "^1.11.0",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.4.2"
+  },
+  "dependencies": {
+    "commando": "0.0.2",
+    "debug": "^2.6.8",
+    "discord.js": "^11.1.0",
+    "discord.js-commando": "^0.9.0",
+    "mkdir-recursive": "^0.3.0",
+    "node-windows": "^0.1.14",
+    "opusscript": "0.0.3",
+    "pg": "^7.1.0",
+    "reflect-metadata": "^0.1.10",
+    "sequelize": "^4.4.2",
+    "sequelize-typescript": "^0.4.0",
+    "youtube-dl": "^1.11.1"
+  }
+}
