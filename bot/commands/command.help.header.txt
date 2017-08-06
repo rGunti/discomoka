@@ -1,9 +1,0 @@
-```
- __     __   __   __         __                     ___       __
-|  \ | /__` /  ` /  \  |\/| /  \ |__/  /\     |__| |__  |    |__)
-|__/ | .__/ \__, \__/  |  | \__/ |  \ /~~\    |  | |___ |___ |
-
-```
-Hi, my name is **Discomoka** and I am your friendly next door music bot ready to fill you with joy and determination.
-
-Here are my commands so you know what you can (and can't) do:

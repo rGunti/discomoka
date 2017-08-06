@@ -6,7 +6,9 @@
 .idea
 *.iml
 out
-gen### Node template
+gen
+
+### Node template
 # Logs
 logs
 *.log
@@ -66,5 +68,7 @@ typings/
 # dotenv environment variables file
 .env
 
+build/
 store/
 test/
+package-lock.json

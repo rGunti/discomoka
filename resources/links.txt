@@ -1,0 +1,1 @@
+If you want to suggest a feature or report a bug (please do), open an [Issue on GitHub](http://rgunti.li/discomoka_bugs).
