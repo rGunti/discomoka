@@ -1,0 +1,5 @@
+These features are planned for the future:
+
+* Better Permission Management (not everyone should be able to do everything)
+* News Feed for currently playing Songs, added Songs, etc. (using a Text Channel)
+* Actually notify the technician when something happened
