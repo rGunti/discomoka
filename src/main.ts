@@ -61,7 +61,8 @@ client.registry
     })
     .registerGroups([
         ['test_commands', 'Test Commands'],
-        ['music_player', 'Music Player Commands']
+        ['music_player', 'Music Player Commands'],
+        ['fun', 'Fun Commands']
     ])
     .registerCommandsIn(path.join(__dirname, 'commands'))
 ;
