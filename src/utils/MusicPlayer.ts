@@ -55,13 +55,11 @@ export class MusicPlayer {
             //instance.queue.push(instance.queue[0]);
             //instance.queue.splice(0, 1);
 
-            if (reason == 'skip') {
+            if (reason == 'skip' || reason == 'stream') {
                 instance.takeNext();
             } else if (reason == 'wish') {
                 instance.currentSongID = instance.userRequestedId;
                 instance.play();
-            } else {
-                instance.takeNext();
             }
         });
 
@@ -94,7 +92,10 @@ export class MusicPlayer {
 
     public static deletePlayer(serverID:string):void {
         debugPrinter(`Deleting Player for Server ${serverID} ...`);
-        MusicPlayer.playerMap.delete(serverID);
+        if (MusicPlayer.playerMap.has(serverID)) {
+            MusicPlayer.playerMap.get(serverID).stop();
+            MusicPlayer.playerMap.delete(serverID);
+        }
     }
 
     public static addSongToQueue(serverID:string, song:Song):void {
@@ -200,6 +201,12 @@ export class MusicPlayer {
     public skip():void {
         if (this.dispatcher) {
             this.dispatcher.end('skip');
+        }
+    }
+
+    public stop():void {
+        if (this.dispatcher) {
+            this.dispatcher.end('stop');
         }
     }
 }
