@@ -27,14 +27,18 @@ import {ConfigReader} from "./config/ConfigReader";
 import {DiscomokaConfig} from "./config/DiscomokaConfig";
 import {HeaderPrinter} from "./config/HeaderPrinter";
 import {Service} from 'node-windows';
+import {EventViewerLogger} from "./utils/log/EventViewerLogger"
+import {LogLevel} from "./utils/log/Logger";
 
 const debugPrinter: debug = debug('discomoka-ts:Windows Service Installer');
+const log:EventViewerLogger = new EventViewerLogger(LogLevel.Debug, 'SvcInstaller');
 
 ConfigReader.readDefaultConfig<DiscomokaConfig>();
 const config:DiscomokaConfig = ConfigReader.getConfig();
 HeaderPrinter.print(ConfigReader.getPackageConfig(), config);
 
 debugPrinter(`Service Installer for ${config.title} [${config.flag}] is starting up...`);
+log.info(`SvcInstaller is starting up; App ${config.title}, Flag ${config.flag}`);
 
 let serviceTitle:string = `${config.title} (${config.flag})`;
 
@@ -47,7 +51,7 @@ let service:Service = new Service({
         value: process.env.CONFIG_PATH || ConfigReader.DEFAULT_FILE
     }, {
         name: 'DEBUG',
-        value: 'discomoka-ts:*'
+        value: process.env.DEBUG || 'discomoka-ts:*'
     }],
     wait: 5,       // 5 sec
     grow: 0.1,     // 10%
@@ -56,12 +60,15 @@ let service:Service = new Service({
 
 service.on('install', () => {
     debugPrinter(`Service ${serviceTitle} installed, starting ...`);
+    log.info(`Service ${serviceTitle} installed, requested Service start`);
     service.start();
 });
 
 service.on('uninstall', () => {
     debugPrinter(`Service uninstall of ${serviceTitle} completed.`);
     debugPrinter(`Service existence: ${service.exists}`);
+
+    log.info(`Service ${serviceTitle} uninstalled, existence: ${service.exists}`);
 });
 
 if (process.env.UNINSTALL && process.env.UNINSTALL === '1') {
